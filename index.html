@@ -44,7 +44,7 @@
                             </div>
                             <div>
                                 <button type="submit" class="submit-btn">Submit</button>
-                                <p id ="warning" class="action-left">3 try left</p>
+                                <p id ="warning" class="action-left"> <span id="warning-no">3 </span> try left</p>
                             </div>
                     </div>
                 </div>
@@ -52,216 +52,107 @@
         </div>
         <div class="notify-section">
             <p id="not-matched-notification" class="notify">❌ Pin Didn't Match, Please try again</p>
-            <p id="matched-notification" class="notify">✅ Pin Matched... Secret door is opening for you</p>
+            <p id="matched-notification" class="notify"> ✅ Pin Matched... Secret door is opening for you</p>
         </div>
     </div>
 
     <script>
-        document.getElementById('pin-generator-btn').addEventListener('click', function(){
+            document.getElementById('pin-generator-btn').addEventListener('click', function(){
             //Generate random number
             let randomValue = Math.ceil(Math.random() * (9999 - 1000)) + 1000;
-            console.log(randomValue);
-
 
             //display random pin in the screen
             document.getElementById('pin-generation-screen').value = randomValue;
 
-
-
             //Hide notification
             document.querySelector('#matched-notification').style.display = "none";
-
             document.querySelector('#not-matched-notification').style.display = "none";
         })
 
-        // document.getElementById('button-7').addEventListener('click', function(e){
-        //     console.log("7 clicked");
-        //     //const str = '';
-        //     let hold7 = document.getElementById('button-7').innerText;
-        //     let pin = document.getElementById('pin-matcher-screen');
+        //Key: 0
+        genericEventListener("0")
 
-        //     pin.value = hold7;
-        //     console.log(hold7);            
-        //     console.log(pin.value + e.target.innerText);
-        // })
+        // Key: 1
+        genericEventListener("1")
 
-        let buttonClass = document.getElementById('button-7');
-        console.log(buttonClass);
-        buttonClass.addEventListener('click', function(e){
-            //for(item of buttonClass )
+        //Key: 2
+        genericEventListener("2")
+
+        //Key: 3
+        genericEventListener("3")
+
+        //Key: 4
+        genericEventListener("4")
+
+        //Key: 5
+        genericEventListener("5")
+
+        //Key: 6
+        genericEventListener("6")
+
+         //Key: 7
+         genericEventListener("7")
+
+        //Key: 8
+        genericEventListener("8")
+
+        //Key: 9
+        genericEventListener("9")
+
+        //Generic Event Listener for Key: 1-9
+        function genericEventListener(buttonNumber){
+            document.getElementById("button-" + buttonNumber).addEventListener('click', function(e){
             prevDigit = document.getElementById('pin-matcher-screen').value;
-
-            console.log(prevDigit + e.target.innerText);
-
             document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+        });
+        }
+
+        // //Generic task function
+        // function genericTask(e){
+        //     prevDigit = document.getElementById('pin-matcher-screen').value;
+        //     document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+        // }
+
+        //Key: All Clear
+            document.getElementById('button-AC').addEventListener('click', function(e){
+            document.getElementById('pin-matcher-screen').value = '';  
         })
 
-        
-        let buttonEight = document.getElementById('button-8');
-        console.log(buttonEight);
-        buttonEight.addEventListener('click', function(e){
-            //for(item of buttonEight )
-            prevDigit = document.getElementById('pin-matcher-screen').value;
-
-            console.log(prevDigit + e.target.innerText);
-
-            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
-            
-        })
-
-
-        let buttonNine = document.getElementById('button-9');
-        console.log(buttonNine);
-        buttonNine.addEventListener('click', function(e){
-            //for(item of buttonNine )
-            prevDigit = document.getElementById('pin-matcher-screen').value;
-
-            console.log(prevDigit + e.target.innerText);
-
-            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
-            
-            
-        })
-
-        let buttonZero = document.getElementById('button-0');
-        console.log(buttonZero);
-        buttonZero.addEventListener('click', function(e){
-            //for(item of buttonZero )
-            prevDigit = document.getElementById('pin-matcher-screen').value;
-
-            console.log(prevDigit + e.target.innerText);
-
-            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
-            
-            
-        })
-
-        let buttonOne = document.getElementById('button-1');
-        console.log(buttonOne);
-        buttonOne.addEventListener('click', function(e){
-            //for(item of buttonOne )
-            prevDigit = document.getElementById('pin-matcher-screen').value;
-
-            console.log(prevDigit + e.target.innerText);
-
-            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
-            
-            
-        })
-
-        let buttonTwo = document.getElementById('button-2');
-        console.log(buttonTwo);
-        buttonTwo.addEventListener('click', function(e){
-            //for(item of buttonTwo )
-            prevDigit = document.getElementById('pin-matcher-screen').value;
-
-            console.log(prevDigit + e.target.innerText);
-
-            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
-            
-            
-        })
-
-        let buttonThree = document.getElementById('button-3');
-        console.log(buttonThree);
-        buttonThree.addEventListener('click', function(e){
-            //for(item of buttonThree )
-            prevDigit = document.getElementById('pin-matcher-screen').value;
-
-            console.log(prevDigit + e.target.innerText);
-
-            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
-            
-            
-        })
-
-        let buttonFour = document.getElementById('button-4');
-        console.log(buttonFour);
-        buttonFour.addEventListener('click', function(e){
-            //for(item of buttonFour )
-            prevDigit = document.getElementById('pin-matcher-screen').value;
-
-            console.log(prevDigit + e.target.innerText);
-
-            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
-            
-            
-        })
-        let buttonFive = document.getElementById('button-5');
-        console.log("buttonFive", buttonFive);
-        buttonFive.addEventListener('click', function(e){
-            //for(item of buttonFive )
-            prevDigit = document.getElementById('pin-matcher-screen').value;
-
-            console.log(prevDigit + e.target.innerText);
-
-            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
-            
-            
-        })
-
-        let buttonSix = document.getElementById('button-6');
-        console.log(buttonSix);
-        buttonSix.addEventListener('click', function(e){
-            //for(item of buttonSix )
-            prevDigit = document.getElementById('pin-matcher-screen').value;
-
-            console.log(prevDigit + e.target.innerText);
-
-            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
-            
-            
-        })
-
-        let buttonAC = document.getElementById('button-AC');
-        console.log(buttonAC);
-        buttonAC.addEventListener('click', function(e){
-            document.getElementById('pin-matcher-screen').value = '';
-            
-            
-        })
-
-
-        let buttonBackSpace = document.getElementById('buttonBackSpace');
-        buttonBackSpace.addEventListener('click', function(){
+        //Key: BackSpace
+            document.getElementById('buttonBackSpace').addEventListener('click', function(){
             const screenValue = document.getElementById('pin-matcher-screen').value;
-            console.log(screenValue);
             const oneMinusScreenValue = screenValue.substring(0, screenValue.length - 1);
-
             document.getElementById('pin-matcher-screen').value = oneMinusScreenValue;
 
         })
 
+        //Key: Submit
+            document.querySelector('.submit-btn').addEventListener('click', function(){
 
+            //initially hiding both notification after click
+            document.querySelector('#matched-notification').style.display = "none";
+            document.querySelector('#not-matched-notification').style.display = "none";
 
+            const randomValue = document.getElementById('pin-generation-screen').value;
+            const randomValueParsed = parseInt(randomValue);
 
-        document.querySelector('.submit-btn').addEventListener('click', function(){
+            const userInputValue = document.getElementById('pin-matcher-screen').value;
+            const userInputValueParsed = parseInt(userInputValue);
 
-            const value = document.getElementById('pin-generation-screen').value;
-            console.log("value" , value);
-
-            const randomValueFilter = parseInt(value);
-            console.log("randomValue", randomValueFilter);
-
-
-
-            const userValue = document.getElementById('pin-matcher-screen').value;
-            const userValueFilter = parseInt(userValue);
-            console.log("filter", userValueFilter);
-
-            if(randomValueFilter === userValueFilter){
-                console.log("matched");
-
+            if(randomValueParsed === userInputValueParsed){
                 document.querySelector('#matched-notification').style.display = "block";
-            }
+                
+                //Clearing both screen
+                document.getElementById('pin-generation-screen').value = '';
+                document.getElementById('pin-matcher-screen').value = '';
+                }
             else{
-                console.log("did not match");
                 document.querySelector('#not-matched-notification').style.display = "block";
             }
 
-
-            document.getElementById('pin-generation-screen').value = '';
+            //Clearing pin-matcher-screen
             document.getElementById('pin-matcher-screen').value = '';
+
         })
     </script>
 
