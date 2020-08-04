@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pin-generator half-width">
+                    <input id="pin-generation-screen" class="form-control" type="text">
+                    <button id="pin-generator-btn"class="generate-btn">Generate Pin</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-section half-width">
+                    <input id="pin-matcher-screen" class="form-control" type="text">
+                    <div class="numbers">
+                        <div class="calc-body">
+                            <div class="calc-button-row">
+                              <div id="button-7" class="button">7</div>
+                              <div id="button-8" class="button">8</div>
+                              <div id="button-9" class="button">9</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div id="button-4" class="button">4</div>
+                              <div id="button-5" class="button">5</div>
+                              <div id="button-6" class="button">6</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div id="button-1" class="button">1</div>
+                              <div id="button-2" class="button">2</div>
+                              <div id="button-3" class="button">3</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div id="buttonBackSpace" class="button"><</div>
+                                <div id="button-0" class="button">0</div>
+                                <div id = "button-AC"  class="button">C</div>
+                            </div>
+                            <div>
+                                <button type="submit" class="submit-btn">Submit</button>
+                                <p class="action-left">3 try left</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notify-section">
+            <p id="not-matched-notification" class="notify">❌ Pin Didn't Match, Please try again</p>
+            <p id="matched-notification" class="notify">✅ Pin Matched... Secret door is opening for you</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('pin-generator-btn').addEventListener('click', function(){
+            //Generate random number
+            let randomValue = Math.ceil(Math.random() * (9999 - 1000)) + 1000;
+            console.log(randomValue);
+
+
+            //display random pin in the screen
+            document.getElementById('pin-generation-screen').value = randomValue;
+        })
+
+        // document.getElementById('button-7').addEventListener('click', function(e){
+        //     console.log("7 clicked");
+        //     //const str = '';
+        //     let hold7 = document.getElementById('button-7').innerText;
+        //     let pin = document.getElementById('pin-matcher-screen');
+
+        //     pin.value = hold7;
+        //     console.log(hold7);            
+        //     console.log(pin.value + e.target.innerText);
+        // })
+
+        let buttonClass = document.getElementById('button-7');
+        console.log(buttonClass);
+        buttonClass.addEventListener('click', function(e){
+            //for(item of buttonClass )
+            prevDigit = document.getElementById('pin-matcher-screen').value;
+
+            console.log(prevDigit + e.target.innerText);
+
+            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+        })
+
+        
+        let buttonEight = document.getElementById('button-8');
+        console.log(buttonEight);
+        buttonEight.addEventListener('click', function(e){
+            //for(item of buttonEight )
+            prevDigit = document.getElementById('pin-matcher-screen').value;
+
+            console.log(prevDigit + e.target.innerText);
+
+            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+            
+        })
+
+
+        let buttonNine = document.getElementById('button-9');
+        console.log(buttonNine);
+        buttonNine.addEventListener('click', function(e){
+            //for(item of buttonNine )
+            prevDigit = document.getElementById('pin-matcher-screen').value;
+
+            console.log(prevDigit + e.target.innerText);
+
+            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+            
+            
+        })
+
+        let buttonZero = document.getElementById('button-0');
+        console.log(buttonZero);
+        buttonZero.addEventListener('click', function(e){
+            //for(item of buttonZero )
+            prevDigit = document.getElementById('pin-matcher-screen').value;
+
+            console.log(prevDigit + e.target.innerText);
+
+            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+            
+            
+        })
+
+        let buttonOne = document.getElementById('button-1');
+        console.log(buttonOne);
+        buttonOne.addEventListener('click', function(e){
+            //for(item of buttonOne )
+            prevDigit = document.getElementById('pin-matcher-screen').value;
+
+            console.log(prevDigit + e.target.innerText);
+
+            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+            
+            
+        })
+
+        let buttonTwo = document.getElementById('button-2');
+        console.log(buttonTwo);
+        buttonTwo.addEventListener('click', function(e){
+            //for(item of buttonTwo )
+            prevDigit = document.getElementById('pin-matcher-screen').value;
+
+            console.log(prevDigit + e.target.innerText);
+
+            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+            
+            
+        })
+
+        let buttonThree = document.getElementById('button-3');
+        console.log(buttonThree);
+        buttonThree.addEventListener('click', function(e){
+            //for(item of buttonThree )
+            prevDigit = document.getElementById('pin-matcher-screen').value;
+
+            console.log(prevDigit + e.target.innerText);
+
+            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+            
+            
+        })
+
+        let buttonFour = document.getElementById('button-4');
+        console.log(buttonFour);
+        buttonFour.addEventListener('click', function(e){
+            //for(item of buttonFour )
+            prevDigit = document.getElementById('pin-matcher-screen').value;
+
+            console.log(prevDigit + e.target.innerText);
+
+            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+            
+            
+        })
+        let buttonFive = document.getElementById('button-5');
+        console.log(buttonFive);
+        buttonFive.addEventListener('click', function(e){
+            //for(item of buttonFive )
+            prevDigit = document.getElementById('pin-matcher-screen').value;
+
+            console.log(prevDigit + e.target.innerText);
+
+            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+            
+            
+        })
+
+        let buttonSix = document.getElementById('button-6');
+        console.log(buttonSix);
+        buttonSix.addEventListener('click', function(e){
+            //for(item of buttonSix )
+            prevDigit = document.getElementById('pin-matcher-screen').value;
+
+            console.log(prevDigit + e.target.innerText);
+
+            document.getElementById('pin-matcher-screen').value = prevDigit+ e.target.innerText;
+            
+            
+        })
+
+        let buttonAC = document.getElementById('button-AC');
+        console.log(buttonAC);
+        buttonAC.addEventListener('click', function(e){
+            document.getElementById('pin-matcher-screen').value = '';
+            
+            
+        })
+
+
+        let buttonBackSpace = document.getElementById('buttonBackSpace');
+        buttonBackSpace.addEventListener('click', function(){
+            const screenValue = document.getElementById('pin-matcher-screen').value;
+            console.log(screenValue);
+            const gamble = screenValue.substring(0, screenValue.length - 1);
+
+            document.getElementById('pin-matcher-screen').value = gamble;
+
+        })
+
+
+
+
+        document.querySelector('.submit-btn').addEventListener('click', function(){
+
+            const value = document.getElementById('pin-generation-screen').value;
+            console.log("value" , value);
+
+            const randomValueFilter = parseInt(value);
+            console.log("randomValue", randomValueFilter);
+
+
+
+            const userValue = document.getElementById('pin-matcher-screen').value;
+            const userValueFilter = parseInt(userValue);
+            console.log("filter", userValueFilter);
+
+            if(randomValueFilter === userValueFilter){
+                console.log("matched");
+
+                document.querySelector('#matched-notification').style.display = "block";
+            }
+            else{
+                console.log("did not match");
+                document.querySelector('#not-matched-notification').style.display = "block";
+            }
+
+
+            document.getElementById('pin-generation-screen').value = '';
+            document.getElementById('pin-matcher-screen').value = '';
+        })
+    </script>
+
+</body>
+</html>
